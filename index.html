@@ -1,0 +1,36 @@
+---
+title: Home
+layout: default
+---
+
+<div class="home">
+  <div class="home-main">
+    <h1>Posts by category</h1>
+  
+    {% for category in site.categories %}
+    <section class="category-view">
+      <h2 class="category-name">{{ category[0] | capitalize }}</h2>
+      <table class="category-posts">
+        <tbody>
+          {% for post in category[1] %}
+          <tr>
+            <td>{{ post.date | date: "%Y/%m/%d" }}</td>
+            <td><a href="{{ post.url }}">{{ post.title }}</td>
+            <td class="tags">{{ post.tags | join: ", " }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    {% endfor %}
+  </div>
+  
+  <aside class="home-aside">
+    <h2>Navigation</h2>
+    {% for category in site.categories %}
+    <ul class="aside-links">
+      <li><a href="#{{ category[0] }}">{{ category[0] | capitalize }}</a></li>
+    </ul>
+    {% endfor %}
+  </aside>
+</div>

@@ -1,0 +1,25 @@
+::selection {
+  background-color: #dddddd;
+  color: #111111;
+}
+
+.header-menu {
+  background-color: #222222;
+}
+
+.header-menu-list-item a {
+  color: #dddddd;
+}
+
+.header-logo {
+  background-color: #343434;
+  color: #dddddd;
+}
+
+@media (prefers-color-scheme: dark) 
+{
+	body {
+    background-color: #111;
+    color: #dddddd;
+	}
+}
